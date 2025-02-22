@@ -3,7 +3,7 @@ class gameObject{
     int getAsset(){
         return 0;
     }
-    delete(){
+    void delete(){
         delete this;
     }
 }
