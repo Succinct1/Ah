@@ -1,5 +1,8 @@
 // Creates an instancec of the game
-#include "vec2.h"
-class game {
+#include "game.h"
 
+game::game() {
+}
+
+game::~game() {
 }
