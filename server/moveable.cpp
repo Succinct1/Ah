@@ -6,12 +6,11 @@ moveable::moveable() {
 moveable::~moveable() {
 }
 
-// Move the object according to its parameters
-// Should be run once per tick
+/// @brief Moves the object according to velocity and angular velocity
 void moveable::move() {
 }
 
-// Updates parameters assuming one tick has passed and collisions 
-// have been resolved. Should be run once per tick
+/// @brief Updates internal values based on other internal values. 
+/// Runs once per tick. Should not change the position or angle.
 void moveable::update(){
 }

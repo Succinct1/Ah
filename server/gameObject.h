@@ -6,9 +6,12 @@
 
 class gameObject {
 public:
+
+    bool isValid; // False if object should be deleted
     gameObject();
     ~gameObject();
-    int getAsset();
+    
+    int getAsset(); // Gives ID indicating which asset to display
     virtual void remove();
 private:
 };

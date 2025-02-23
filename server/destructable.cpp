@@ -1,7 +1,6 @@
 #include "destructable.h"
 
-destructable::destructable() {
-}
+destructable::destructable(int health, int maxHealth, int armor):maxHealth(maxHealth), health(health), armor(armor){}
 
 destructable::~destructable() {
 }

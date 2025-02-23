@@ -39,6 +39,11 @@ vec2& vec2::operator*=(int scalar) {
     return *this;
 }
 
+// Divide
+vec2 vec2::operator/(int scalar) {
+    return vec2(x / scalar, y/scalar);
+}
+
 // Equality 
 bool vec2::operator==(const vec2& other) const {
     return (x == other.x && y == other.y);
