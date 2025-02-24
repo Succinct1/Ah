@@ -1,9 +1,11 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#include "entity.h"
+#include "gameObject.h"
+#include "destructable.h"
+#include "moveable.h"
 
-class enemy : public entity {
+class enemy : public gameObject , public destructable, public moveable {
 public:
     enemy();
     ~enemy();

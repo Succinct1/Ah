@@ -3,28 +3,40 @@
 
 #include "gameObject.h"
 #include "hitbox.h"
+#include "box2d.h"
 
-class interactable : public gameObject {
+// Every object that is part of simulation should inherit from this class
+// Represents a b2Body
+class interactable {
 public:
-    vec2 pos; // Position   
-    float angle; // -pi to pi radians
+    b2BodyId Body;
+    int id;
+
+    int collideMask;    
+    int objectCategory;
+    float mass;
+    float friction;
+    float elasticity;
+
+    // Thread safe data
+    void* data; // Data to send to user
+    int dataLength; // Length of data
 
     hitbox* hitbox;
 
     interactable();
     ~interactable();
-    virtual bool isCollide(interactable* other);
-    virtual void collide(interactable* other);
+    
+    // These need parameters but idk what they are
+    virtual void addSensor();
+    virtual void removeSensor();
+    virtual void addHitbox();
+    virtual void removeHitbox();
+    virtual void addJoint(); 
+    virtual void removeJoint(b2JointId jointId);
+
 private:
 };
-
-// Function for collision detection
-bool checkCollision(const rectangle& rect1, const rectangle& rect2);
-bool checkCollision(const rectangle& rect, const circle& circ);
-bool checkCollision(const rectangle& rect, const polygon& poly);
-bool checkCollision(const circle& circ1, const circle& circ2);
-bool checkCollision(const circle& circ, const polygon& poly);
-bool checkCollision(const polygon& poly1, const polygon& poly2);
 
 
 #endif // INTERACTABLE_H

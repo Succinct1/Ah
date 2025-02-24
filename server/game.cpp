@@ -49,6 +49,8 @@ void game::gameTick(){
 
         // Update effects
 
+        // Send data?
+
         std::this_thread::sleep_for(std::chrono::duration<float>(timeStep));
     }
 }

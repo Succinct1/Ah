@@ -8,8 +8,6 @@
 class gameObject {
 public:
 
-    bool isValid; // True if part of game
-
     gameObject();
     ~gameObject();
     

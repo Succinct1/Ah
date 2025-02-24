@@ -19,6 +19,19 @@
 #include "effect.h"
 #include "box2d/box2d.h"
 
+// Categories for collision filtering
+// ex: PLAYER | ENEMY = 0x00000006 means the object can collide with players and enemies
+// both objects must be able to hit the other
+enum objectCategories
+{
+    INVALID = 0x00000001,
+    PLAYER = 0x00000002,
+    ENEMY = 0x00000004,
+    WALLS = 0x00000008,
+    PROJECTILE = 0x00000010,
+    BOUNDARY = 0x00000020,
+};
+
 class game {
 public:
 
@@ -32,7 +45,7 @@ public:
     std::vector<gameObject*> gameObjects; // Other gameObjects
     std::vector<int> updateList; // List of objects to update
 
-    b2WorldId worldId;
+    b2WorldId worldId; // Wake up Neo
 
     game();
     ~game();

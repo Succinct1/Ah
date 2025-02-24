@@ -9,23 +9,25 @@
 /// Certain shapes require more work to calculate collisions
 /// rectangle << circle < polygon
 /// Could add class for elipse or static equations or other shapes
+/// Position is realtive to the body's position
 class hitbox
 {
 public:
+    vec2 pos;
+    bool setPos(vec2); // True if pos is changed
+    vec2 getPos();
     hitbox();
     ~hitbox();
 private:
 };
 
-/// @brief Rectangle hitbox
-/// Size is the width and height of the rectangle
-/// Delta is the distance from the center to the edge
-/// Size can be negative though it may have unintended results
+/// @brief Vertical Rectangle hitboxes are much faster to check collisions
+/// but they might cover larger areas than desired
 class rectangle : public hitbox
 {
 public:
-    vec2* points[4];
-    rectangle(int width = 0, int height = 0): points{new vec2(-width/2, -height/2), new vec2(width/2, -height/2), new vec2(width/2, height/2), new vec2(-width/2, height/2)}{};
+    vec2 tr,bl;
+    rectangle();
     ~rectangle();
 };
 

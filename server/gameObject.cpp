@@ -7,7 +7,7 @@ gameObject::~gameObject() {
 }
 
 /// @brief Gets id for use in switch case in client
-/// @return 
+/// @return Id describing which asset to display or generate
 int gameObject::getAsset() {
     return 0;
 }

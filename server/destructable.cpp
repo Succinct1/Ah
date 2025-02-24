@@ -13,12 +13,3 @@ destructable::~destructable() {
 void destructable::takeDamage(int damage) {
     health -= damage / (armor + 100);
 }
-
-void destructable::update() {
-    if (health <= 0) {
-        remove();
-    }
-    else if (health > maxHealth) {
-        health = maxHealth;
-    }
-}
