@@ -3,6 +3,9 @@
 
 #include "interactable.h"
 
+
+/// @brief Moveable are objects that move but are not simulated in box2d
+/// Do not use this class without asking max
 class moveable : public interactable {
 public:
     

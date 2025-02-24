@@ -12,6 +12,3 @@ int gameObject::getAsset() {
     return 0;
 }
 
-void gameObject::remove() {
-    delete this;
-}

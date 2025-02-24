@@ -4,15 +4,16 @@
 #include <vector>
 #include "vec2.h"
 
+/// @brief GameObjects are objects that are tied to a game instance
 class gameObject {
 public:
 
-    bool isValid; // False if object should be deleted
+    bool isValid; // True if part of game
+
     gameObject();
     ~gameObject();
     
     int getAsset(); // Gives ID indicating which asset to display
-    virtual void remove();
 private:
 };
 

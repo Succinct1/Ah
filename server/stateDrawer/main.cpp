@@ -1,10 +1,8 @@
-#include "gameObject.cpp"
 #include "game.h"
 
-int main(int argc, char* argv[]){
+main() {
     game* myGame = new game();
     myGame->gameTick();
     delete myGame;
     return 0;
 }
-

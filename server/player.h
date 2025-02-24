@@ -1,9 +1,10 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "entity.h"
+#include "destructable.h"
+#include "moveable.h"
 
-class player : public entity{
+class player : public destructable, public moveable {
 public:
     int playerID;
     bool left,right,up,down; // Buttons pressed
